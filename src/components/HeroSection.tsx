@@ -2,6 +2,7 @@
 import { useTheme } from './ThemeProvider';
 import { Button } from '@/components/ui/button';
 import { Car, CheckCircle, Clock } from 'lucide-react';
+import Link from 'next/link';
 
 const HeroSection = () => {
   const { theme } = useTheme();
@@ -36,13 +37,15 @@ const HeroSection = () => {
                 <span className={`font-medium ${theme === 'dark' ? 'text-gray-300' : 'text-gc-medium-gray'}`}>All Vehicle Types</span>
               </div>
             </div>
-            {/* CTA Button */}
             <div className="pt-4">
-              <Button size="lg" className="bg-gradient-to-r from-gc-red-primary to-gc-sunset-orange text-white px-8 py-4 text-lg font-semibold rounded-md shadow-2xl hover:shadow-3xl transform hover:scale-105 transition-all duration-300">
-                Create Inspection
-              </Button>
+              <Link href="/inspection-form" >
+                <Button size="lg" className="bg-gradient-to-r from-gc-red-primary to-gc-sunset-orange text-white px-8 py-4 text-lg font-semibold rounded-md shadow-2xl hover:shadow-3xl transform hover:scale-105 transition-all duration-300">
+                  Create Inspection
+                </Button>
+              </Link>
             </div>
           </div>
+
           {/* Hero Image */}
           <div className="relative animate-slide-up">
             <div className="relative z-10">
@@ -52,7 +55,6 @@ const HeroSection = () => {
                 className="rounded-2xl shadow-2xl w-full h-auto"
               />
             </div>
-
           </div>
         </div>
       </div>
