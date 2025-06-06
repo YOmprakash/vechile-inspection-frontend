@@ -7,11 +7,11 @@ const HeroSection = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Content */}
-          <div className="space-y-8 animate-fade-in">
+          <div className="space-y-8 ">
             <div className="space-y-4">
               <h1 className="text-5xl lg:text-6xl font-bold text-gc-dark-blue leading-tight">
                 Book Your Vehicle Inspection{' '}
-                <span className="text-gc-sky-blue">in Minutes</span>
+                <span className="text-gc-sunset-orange">in Minutes</span>
               </h1>
               <p className="text-xl text-gc-medium-gray leading-relaxed max-w-xl">
                 Professional vehicle inspections made simple. Get certified inspectors, digital reports, and transparent pricing - all in one platform.
@@ -38,9 +38,9 @@ const HeroSection = () => {
             <div className="pt-4">
               <Button 
                 size="lg" 
-                className="bg-gradient-to-r from-gc-sky-blue to-gc-turquoise hover:from-gc-blue hover:to-gc-green text-white px-8 py-4 text-lg font-semibold rounded-xl shadow-2xl hover:shadow-3xl transform hover:scale-105 transition-all duration-300"
+                className="bg-gradient-to-r from-gc-red-primary to-gc-sunset-orange  text-white px-8 py-4 text-lg font-semibold rounded-md shadow-2xl hover:shadow-3xl transform hover:scale-105 transition-all duration-300"
               >
-                Create Order
+                Create Inspection
               </Button>
             </div>
           </div>

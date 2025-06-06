@@ -1,3 +1,5 @@
+'use client'
+
 import { Shield, Clock, Award, Globe, Users, Zap } from 'lucide-react';
 
 const WhyChooseUs = () => {
@@ -52,7 +54,7 @@ const WhyChooseUs = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold mb-4 text-gc-midnight-blue">
-            Why Choose <span className="bg-gradient-to-r from-gc-turquoise to-gc-sky-blue bg-clip-text text-transparent">InspectSwift?</span>
+            Why Choose <span className="bg-gradient-to-r from-gc-turquoise to-gc-sky-blue bg-clip-text text-transparent">Zenith Check?</span>
           </h2>
           <p className="text-xl text-gc-slate-gray max-w-2xl mx-auto">
             Experience the future of vehicle inspections with our cutting-edge platform
@@ -61,7 +63,7 @@ const WhyChooseUs = () => {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {benefits.map((benefit, index) => (
-            <div key={index} className="group">
+            <div key={index} className="w-full h-full">
               <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 hover:bg-white transition-all duration-300 transform hover:-translate-y-2 border border-gc-light-blue-gray/30 shadow-lg hover:shadow-xl">
                 <div className={`bg-gradient-to-br ${benefit.gradient} w-16 h-16 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
                   <benefit.icon className="w-8 h-8 text-white" />
