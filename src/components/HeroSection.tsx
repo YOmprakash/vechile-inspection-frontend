@@ -2,6 +2,7 @@
 import { useTheme } from './ThemeProvider';
 import { Button } from '@/components/ui/button';
 import { Car, CheckCircle, Clock } from 'lucide-react';
+import Image from 'next/image';
 import Link from 'next/link';
 
 const HeroSection = () => {
@@ -49,7 +50,9 @@ const HeroSection = () => {
           {/* Hero Image */}
           <div className="relative animate-slide-up">
             <div className="relative z-10">
-              <img
+              <Image
+              width={600}
+              height={400}
                 src='/assets/Car-Inspection-Services.jpg'
                 alt="Professional Vehicle Inspection"
                 className="rounded-2xl shadow-2xl w-full h-auto"

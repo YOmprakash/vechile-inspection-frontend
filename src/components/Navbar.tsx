@@ -40,9 +40,9 @@ const Navbar = () => {
           {/* Desktop Navigation*/}
           <div className="hidden md:flex items-center space-x-8">
             <Link href="/" className={`${linkColor} font-medium transition-colors`}>Home</Link>
-            <a href="#how-it-works" className={`${linkColor} font-medium transition-colors`}>How It Works</a>
-            <a href="#why-choose-us" className={`${linkColor} font-medium transition-colors`}>Why Choose Us</a>
-            <a href="#pricing" className={`${linkColor} font-medium transition-colors`}>Pricing</a>
+            <Link href="#how-it-works" className={`${linkColor} font-medium transition-colors`}>How It Works</Link>
+            <Link href="#why-choose-us" className={`${linkColor} font-medium transition-colors`}>Why Choose Us</Link>
+            <Link href="#pricing" className={`${linkColor} font-medium transition-colors`}>Pricing</Link>
             <Link href="/become-inspector" className={`${linkColor} font-medium transition-colors`}>Become Inspector</Link>
           </div>
 
@@ -91,11 +91,11 @@ const Navbar = () => {
         {isMenuOpen && (
           <div className={`md:hidden py-4 border-t w-full ${theme === 'dark' ? 'border-gray-700 bg-gray-950' : 'border-gc-light-gray-1 bg-white'}`}>
             <div className="flex flex-col space-y-4 px-2">
-              <a href="/" className={`${linkColor} font-medium`}>Home</a>
-              <a href="#how-it-works" className={`${linkColor} font-medium`}>How It Works</a>
-              <a href="#why-choose-us" className={`${linkColor} font-medium`}>Why Choose Us</a>
-              <a href="#pricing" className={`${linkColor} font-medium`}>Pricing</a>
-              <a href="/become-inspector" className={`${linkColor} font-medium`}>Become Inspector</a>
+              <Link href="/" className={`${linkColor} font-medium`}>Home</Link>
+              <Link href="#how-it-works" className={`${linkColor} font-medium`}>How It Works</Link>
+              <Link href="#why-choose-us" className={`${linkColor} font-medium`}>Why Choose Us</Link>
+              <Link href="#pricing" className={`${linkColor} font-medium`}>Pricing</Link>
+              <Link href="/become-inspector" className={`${linkColor} font-medium`}>Become Inspector</Link>
               <div className="flex flex-col space-y-2 pt-4 border-t ${theme === 'dark' ? 'border-gray-700' : 'border-gc-light-gray-1'}">
                 <Link href="/inspection-form" className="text-center text-white bg-gc-coral-orange py-2 px-4 rounded-full font-medium hover:bg-orange-500 transition-colors">
                   Create Inspection
