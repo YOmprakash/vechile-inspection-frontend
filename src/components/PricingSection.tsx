@@ -20,7 +20,7 @@ const PricingSection = () => {
                 </div>
                 <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
                     {plans.map((plan, index) => (
-                        <div key={index} className={`relative rounded-3xl p-8 shadow-lg transition-all duration-300 hover:shadow-2xl transform hover:-translate-y-2 border-2 ${theme === 'dark' ? (plan.popular ? 'bg-gray-900 border-gc-sky-blue' : 'bg-gray-900 border-gray-700') : (plan.popular ? 'bg-white border-gc-sky-blue' : 'bg-white border-gc-light-gray-1')}`}>
+                        <div key={index} className={`relative  flex flex-col rounded-3xl p-8 shadow-lg transition-all duration-300 hover:shadow-2xl transform hover:-translate-y-2 border-2 ${theme === 'dark' ? (plan.popular ? 'bg-gray-900 border-gc-sky-blue' : 'bg-gray-900 border-gray-700') : (plan.popular ? 'bg-white border-gc-sky-blue' : 'bg-white border-gc-light-gray-1')}`}>
                             {plan.popular && <div className="absolute -top-4 left-1/2 transform -translate-x-1/2"><span className="bg-gradient-to-r from-gc-sky-blue to-gc-turquoise text-white px-6 py-2 rounded-full text-sm font-semibold">Most Popular</span></div>}
                             <div className="text-center mb-8">
                                 <h3 className={`text-2xl font-bold mb-2 ${theme === 'dark' ? 'text-gray-100' : 'text-gc-dark-blue'}`}>{plan.name}</h3>
@@ -30,7 +30,7 @@ const PricingSection = () => {
                                     <span className={`ml-2 ${theme === 'dark' ? 'text-gray-400' : 'text-gc-medium-gray'}`}>per inspection</span>
                                 </div>
                             </div>
-                            <ul className="space-y-4 mb-8">
+                            <ul className="space-y-4 mb-8 flex-grow">
                                 {plan.features.map((feature, featureIndex) => (
                                     <li key={featureIndex} className="flex items-center space-x-3">
                                         <Check className={`w-5 h-5 ${theme === 'dark' ? 'text-green-400' : 'text-gc-green'}`} />
@@ -49,7 +49,7 @@ const PricingSection = () => {
                 </div>
                 <div className="text-center mt-12">
                     <p className={`${theme === 'dark' ? 'text-gray-400' : 'text-gc-medium-gray'}`}>
-                        Need a custom solution? <a href="#contact" className={`font-medium hover:underline ${theme === 'dark' ? 'text-sky-400' : 'text-gc-sky-blue'}`}>Contact our sales team</a>
+                        Need a custom solution? <span className={`font-medium hover:underline ${theme === 'dark' ? 'text-sky-400' : 'text-gc-sky-blue'}`}>Contact our sales team</span>
                     </p>
                 </div>
             </div>
