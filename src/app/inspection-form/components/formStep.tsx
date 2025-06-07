@@ -23,7 +23,7 @@ const FormStep = () => {
         }
     }
 
-    return <div className={"w-full h-full  "}>
+    return <div className={"w-full h-full shadow-xl border-0 bg-white/95 backdrop-blur-sm "}>
         {
             renderFormByStep(currentStep)
         }

@@ -1,8 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { stateFroms } from "./interfaces";
 
-export interface stateFroms {
-    currentStep: number;
-}
 
 const initialState: stateFroms = {
     currentStep: 0,
@@ -21,5 +19,5 @@ const inspectionFormSlice = createSlice({
     }
 })
 
-export const {handleNextStep,handlePreviousStep} = inspectionFormSlice.actions;
+export const { handleNextStep, handlePreviousStep } = inspectionFormSlice.actions;
 export const inspectionFormReducer = inspectionFormSlice.reducer;

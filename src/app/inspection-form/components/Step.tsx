@@ -1,18 +1,8 @@
-import { Badge, Check } from 'lucide-react';
-import React, { useState } from 'react'
-import { LucideIcon } from 'lucide-react';
+import { Check } from 'lucide-react';
+import React from 'react'
 import { useSelector } from 'react-redux';
 import { currentStepSelector } from '../selector';
-export interface StepData {
-    title: string;
-    id:number;
-    icon:LucideIcon;
-}
-
-export interface StepsProps {
-    steps: StepData[];
-}
-
+import { StepsProps } from '../interfaces';
 
 
 const Steps:React.FC<StepsProps> = ({steps}) => {
@@ -35,9 +25,14 @@ const Steps:React.FC<StepsProps> = ({steps}) => {
             <React.Fragment key={step.id}>
               <div className="flex flex-col items-center z-10">
                 <div className={`
-                  flex items-center justify-center w-14 h-14 bg-gc-before rounded-full text-white font-bold transition-all duration-500 shadow-lg
-                
-                `}>
+                    w-12 h-12 rounded-full flex items-center justify-center text-sm font-semibold
+                    transition-all duration-300 relative z-10
+                    ${status === 'completed' 
+                      ? 'bg-green-500 text-white' 
+                      : status === 'current'
+                      ? 'bg-blue-500 text-white ring-4 ring-blue-200'
+                      : 'bg-gray-200 text-gray-500'}
+                  `}>
                   {status === 'completed' ? (
                     <Check className="w-7 h-7 " />
                   ) : (
@@ -52,28 +47,29 @@ const Steps:React.FC<StepsProps> = ({steps}) => {
                   }`}>
                     {step.title}
                   </div>
-                  <Badge className={`mt-2 transition-all duration-300 ${
-                    status === 'current' ? 'border-blue-500 text-gc-blue bg-blue-50' :
-                    status === 'completed' ? 'border-green-500 text-gc-green bg-green-50' :
-                    'border-gray-300 text-gray-500 bg-gray-50'
-                  }`}>
-                    Step {step.id}
-                  </Badge>
-                </div>
-              </div>
-              
-              {index < steps.length - 1 && (
-                <div className={`flex-1 h-2 mx-6 rounded-full transition-all duration-500 shadow-inner ${
-                  step.id < currentStep ? 'bg-gradient-to-r from-green-400 to-green-600' : 
-                  'bg-gradient-to-r from-gray-200 to-gray-300'
-                }`}>
                   
                 </div>
-              )}
+              </div>
+              {index < steps.length - 1 && (
+                  <div className={`
+                    flex-1 h-0.5 mx-4 transition-all duration-300
+                    ${index < currentStep ? 'bg-green-500' : 'bg-gray-200'}
+                  `} />
+                )}
+                
             </React.Fragment>
           );
         })}
+        
+        
       </div>
+       <div className="w-full bg-gray-200 mt-4 rounded-full h-2">
+         <div 
+              className="bg-gradient-to-r from-blue-500 to-green-500 h-2 rounded-full transition-all duration-300"
+              style={{ width: `${((currentStep + 1) / steps.length) * 100}%` }}
+            />
+          </div>
+
     </div>
   )
 }
