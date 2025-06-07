@@ -1,7 +1,7 @@
 'use client'
 
 import React, { useEffect, useState } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { RootState, useAppDispatch } from '@/store/appStore';
 import { handlePreviousStep } from '../../slice'; 
 
