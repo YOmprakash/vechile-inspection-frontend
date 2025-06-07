@@ -1,7 +1,9 @@
+'use client'
+
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { RootState, useAppDispatch } from '@/store/appStore';
-import { handlePreviousStep } from '../../slice'; // Adjust this import path as needed
+import { handlePreviousStep } from '../../slice'; 
 
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';

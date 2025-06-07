@@ -38,7 +38,7 @@ const PricingSection = () => {
                                     </li>
                                 ))}
                             </ul>
-                            <Link href='/inspectionForm'>
+                            <Link href='/inspection-form'>
                                 <Button className={`w-full py-3 text-lg font-semibold rounded-xl transition-all duration-300 ${plan.popular ? 'bg-gradient-to-r from-gc-sky-blue to-gc-turquoise hover:opacity-90 text-white shadow-lg' : (theme === 'dark' ? 'bg-gray-800 text-gray-200 hover:bg-gray-700' : 'bg-gc-mist-gray text-gc-dark-blue hover:bg-gc-light-gray-1')}`}>
                                     {plan.buttonText}
                                 </Button>
