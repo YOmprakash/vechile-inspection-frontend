@@ -211,9 +211,8 @@ const PaymentDetails = () => {
             <div className="flex justify-between items-center border-t pt-6 mt-12">
                 <Button
                   type="button"
-                  variant="outline"
                   onClick={() => dispatch(handlePreviousStep())}
-                  className="rounded-lg px-6 py-5 text-base font-semibold"
+                 className='text-gc-black border border-gc-black bg-transparent'
                 >
                   <ChevronLeft className="w-5 h-5 mr-2" />
                   Previous

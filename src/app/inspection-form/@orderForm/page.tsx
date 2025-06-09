@@ -2,15 +2,16 @@
 
 import React from 'react';
 import { Button } from '@/components/ui/button';
-import { X, User, Car, CreditCard } from 'lucide-react';
+import { X, User, Car, CreditCard, Timer } from 'lucide-react';
 import Link from 'next/link';
 import Steps from '../components/Step';
 import FormStep from '../components/formStep';
 
 const OrderInspectionForm = () => {
   const steps = [
-    { id: 1, title: 'Customer Details', icon: User },
-    { id: 2, title: 'Vehicle Details', icon: Car },
+    { id: 0, title: 'Customer Details', icon: User },
+    { id: 1, title: 'Vehicle Details', icon: Car },
+    { id: 2, title: 'Timeslot Details', icon: Timer },
     { id: 3, title: 'Payment Information', icon: CreditCard },
   ];
 
