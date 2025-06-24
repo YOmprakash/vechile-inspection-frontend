@@ -16,12 +16,11 @@ const VehicleDetails = () => {
   const dispatch = useAppDispatch();
   const { data, errors } = useSelector((state: RootState) => state.vehicleDetails);
 
-  // Handler for regular input fields
   const handleChange = (field: keyof typeof data) => (e: React.ChangeEvent<HTMLInputElement>) => {
     dispatch(updateVehicleField({ field, value: e.target.value }));
   };
 
-  // Handler for the Radix Select component
+
   const handleSelectChange = (field: keyof typeof data) => (value: string) => {
     dispatch(updateVehicleField({ field, value }));
   };
@@ -136,7 +135,6 @@ const VehicleDetails = () => {
             </div>
        
           </div>
-           {/* INSPECTION TYPE WITH PRICES*/}
           <div className="space-y-3 pt-2">
             <Label className="text-sm font-medium text-gray-700">Inspection Type</Label>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -159,7 +157,7 @@ const VehicleDetails = () => {
                       value={key}
                       checked={isSelected}
                       onChange={handleChange('inspectionType')}
-                      className="absolute opacity-0" // Hide the actual radio button
+                      className="absolute opacity-0" 
                     />
                     <div className="flex justify-between items-start">
                       <div className="space-y-1">
@@ -188,8 +186,6 @@ const VehicleDetails = () => {
           </div>
         </div>
       </Card>
-
-          {/* Navigation Buttons */}
           <div className="flex justify-between gap-4 pt-4">
             <Button
               type="button"

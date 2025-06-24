@@ -12,7 +12,6 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 import { ChevronLeft, CreditCard, Banknote, Smartphone, ShieldCheck, CheckCircle2, X } from 'lucide-react';
 import { ModelProps } from '../../interfaces';
 
-// --- Price definitions ---
 const INSPECTION_PRICES = {
   basic: 1499,
   premium: 2499,
@@ -21,7 +20,6 @@ const INSPECTION_PRICES = {
 const PLATFORM_FEE = 99;
 
 
-// --- Success Modal Component ---
 const SuccessModal :React.FC<ModelProps> = ({ isOpen, onClose, totalAmount }) => {
   if (!isOpen) return null;
 
@@ -67,13 +65,11 @@ const SuccessModal :React.FC<ModelProps> = ({ isOpen, onClose, totalAmount }) =>
 const PaymentDetails = () => {
   const dispatch = useAppDispatch();
   
-  // --- State Hooks ---
   const { inspectionType } = useSelector((state: RootState) => state.vehicleDetails.data);
   const [totalAmount, setTotalAmount] = useState(PLATFORM_FEE);
   const [paymentMethod, setPaymentMethod] = useState('');
-  const [isModalOpen, setIsModalOpen] = useState(false); // State for modal visibility
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
-  // --- Data for Payment Methods Dropdown ---
   const paymentMethods = [
     { value: 'credit-card', label: 'Credit Card', icon: CreditCard },
     { value: 'debit-card', label: 'Debit Card', icon: CreditCard },
@@ -94,16 +90,14 @@ const PaymentDetails = () => {
 
   const selectedPaymentMethod = paymentMethods.find(p => p.value === paymentMethod);
 
-  // --- Event Handlers ---
   const handleSubmit = (e:any) => {
     e.preventDefault();
-    // In a real app, you would dispatch a payment processing action here.
-    setIsModalOpen(true); // Show the success modal
+    setIsModalOpen(true); 
   };
 
   const handleCloseModal = () => {
     setIsModalOpen(false);
-    // Optionally, dispatch an action to reset the form or navigate to the next step/page.
+    
   };
 
   return (
@@ -127,7 +121,6 @@ const PaymentDetails = () => {
           <CardContent className="p-8">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
               
-              {/* --- LEFT COLUMN: Payment Options --- */}
               <div className="space-y-6">
                 <div className="space-y-2">
                   <Label htmlFor="paymentMethod" className="font-semibold text-gray-700">Payment Method</Label>
@@ -175,7 +168,6 @@ const PaymentDetails = () => {
                 </div>
               </div>
               
-              {/* --- RIGHT COLUMN: Order Summary --- */}
               <div className="space-y-6">
                 <div className="space-y-3">
                   <Label className="font-semibold text-gray-700">Order Summary</Label>
@@ -207,7 +199,6 @@ const PaymentDetails = () => {
 
             </div>
 
-            {/* --- NAVIGATION BUTTONS --- */}
             <div className="flex justify-between items-center border-t pt-6 mt-12">
                 <Button
                   type="button"

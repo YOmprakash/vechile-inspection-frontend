@@ -1,4 +1,4 @@
-// customerDetailsSlice.ts
+
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { customerDetails, CustomerDetailsState, ValidationErrors } from '../../interfaces';
 

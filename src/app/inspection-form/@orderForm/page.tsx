@@ -18,7 +18,6 @@ const OrderInspectionForm = () => {
   return (
     <div className="min-h-screen bg-gc-mist-gray p-4 md:p-8 relative overflow-hidden">
 
-      {/* Close Button */}
       <Link href='/'>
         <Button
           size="icon"
@@ -32,7 +31,6 @@ const OrderInspectionForm = () => {
 
         <Steps steps={steps} />
 
-        {/* Form Content */}
         <div className="mb-12">
           <FormStep />
         </div>

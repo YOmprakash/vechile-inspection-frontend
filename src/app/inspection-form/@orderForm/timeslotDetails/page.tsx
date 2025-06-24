@@ -9,33 +9,26 @@ import { setDate, setTime, confirmTimeslot } from './slice';
 import { useSelector } from 'react-redux';
 
 const TimeslotDetails = () => {
-  // Select state from the Redux store
   const dispatch = useAppDispatch();
   const { selectedDate, selectedTime } = useSelector((state:RootState) => state.timeSlotDetails.timeslotData);
 
-  // Generate next 7 days
   const today = startOfToday();
   const upcomingDays = Array.from({ length: 7 }, (_, i) => addDays(today, i));
 
-  // Generate time slots from 10 AM to 8 PM
   const timeSlots = [
     '10:00 AM', '11:00 AM', '12:00 PM', '1:00 PM',
     '2:00 PM', '3:00 PM', '4:00 PM', '5:00 PM',
     '6:00 PM', '7:00 PM', '8:00 PM'
   ];
 
-  // Dispatch action to set the date in Redux store
-  const handleDateSelect = (date: Date) => {
-    // Dates are stored as ISO strings for Redux serializability
+   const handleDateSelect = (date: Date) => {
     dispatch(setDate(date.toISOString()));
   };
 
-  // Dispatch action to set the time in Redux store
   const handleTimeSelect = (time: string) => {
     dispatch(setTime(time));
   };
 
-  // Dispatch actions to confirm the slot and proceed
   const handleConfirmSlot = () => {
     if (selectedDate && selectedTime) {
       dispatch(confirmTimeslot({ date: selectedDate, time: selectedTime }));
@@ -43,7 +36,6 @@ const TimeslotDetails = () => {
     }
   };
 
-  // Parse selectedDate string back to a Date object for formatting
   const parsedSelectedDate = selectedDate ? parseISO(selectedDate) : null;
 
   return (
