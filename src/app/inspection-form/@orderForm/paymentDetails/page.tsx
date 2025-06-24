@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { RootState, useAppDispatch } from '@/store/appStore';
-import { handlePreviousStep } from '../../slice'; 
+import { handlePreviousStep } from '../../slice';
 
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -20,7 +20,7 @@ const INSPECTION_PRICES = {
 const PLATFORM_FEE = 99;
 
 
-const SuccessModal :React.FC<ModelProps> = ({ isOpen, onClose, totalAmount }) => {
+const SuccessModal: React.FC<ModelProps> = ({ isOpen, onClose, totalAmount }) => {
   if (!isOpen) return null;
 
   return (
@@ -64,7 +64,7 @@ const SuccessModal :React.FC<ModelProps> = ({ isOpen, onClose, totalAmount }) =>
 
 const PaymentDetails = () => {
   const dispatch = useAppDispatch();
-  
+
   const { inspectionType } = useSelector((state: RootState) => state.vehicleDetails.data);
   const [totalAmount, setTotalAmount] = useState(PLATFORM_FEE);
   const [paymentMethod, setPaymentMethod] = useState('');
@@ -90,22 +90,22 @@ const PaymentDetails = () => {
 
   const selectedPaymentMethod = paymentMethods.find(p => p.value === paymentMethod);
 
-  const handleSubmit = (e:any) => {
+  const handleSubmit = (e: any) => {
     e.preventDefault();
-    setIsModalOpen(true); 
+    setIsModalOpen(true);
   };
 
   const handleCloseModal = () => {
     setIsModalOpen(false);
-    
+
   };
 
   return (
     <>
-      <SuccessModal 
-        isOpen={isModalOpen} 
-        onClose={handleCloseModal} 
-        totalAmount={totalAmount} 
+      <SuccessModal
+        isOpen={isModalOpen}
+        onClose={handleCloseModal}
+        totalAmount={totalAmount}
       />
       <Card className="border-0 shadow-lg bg-white rounded-2xl animate-fade-in transition-all duration-300">
         <CardHeader className="pb-6 rounded-t-2xl bg-slate-50 border-b">
@@ -116,11 +116,11 @@ const PaymentDetails = () => {
             Payment & Confirmation
           </CardTitle>
         </CardHeader>
-        
+
         <form onSubmit={handleSubmit}>
           <CardContent className="p-8">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-              
+
               <div className="space-y-6">
                 <div className="space-y-2">
                   <Label htmlFor="paymentMethod" className="font-semibold text-gray-700">Payment Method</Label>
@@ -158,16 +158,16 @@ const PaymentDetails = () => {
                   />
                 </div>
                 <div className="!mt-8 p-4 bg-blue-50 border border-blue-200 rounded-lg flex items-start gap-3">
-                    <div className="flex-shrink-0 w-6 h-6 bg-blue-600 text-white rounded-full flex items-center justify-center mt-0.5">
-                        <ShieldCheck size={14} />
-                    </div>
-                    <div className="text-sm text-blue-800">
-                        <p className="font-semibold">Your payment is secure.</p>
-                        <p className="text-blue-700">All transactions are encrypted. We never store card details.</p>
-                    </div>
+                  <div className="flex-shrink-0 w-6 h-6 bg-blue-600 text-white rounded-full flex items-center justify-center mt-0.5">
+                    <ShieldCheck size={14} />
+                  </div>
+                  <div className="text-sm text-blue-800">
+                    <p className="font-semibold">Your payment is secure.</p>
+                    <p className="text-blue-700">All transactions are encrypted. We never store card details.</p>
+                  </div>
                 </div>
               </div>
-              
+
               <div className="space-y-6">
                 <div className="space-y-3">
                   <Label className="font-semibold text-gray-700">Order Summary</Label>
@@ -190,30 +190,31 @@ const PaymentDetails = () => {
                   </Card>
                 </div>
                 <div className="p-4 bg-green-50 border border-green-200 rounded-lg space-y-2">
-                     <h4 className="font-semibold text-green-800">What happens next?</h4>
-                     <p className="text-sm text-green-700">
-                        After payment, you'll get a confirmation email and our inspector will contact you within 24 hours to schedule the visit.
-                     </p>
+                  <h4 className="font-semibold text-green-800">What happens next?</h4>
+                  <p className="text-sm text-green-700">
+                    After payment, you&rsquo;ll get a confirmation email and our inspector will contact you within 24 hours to schedule the visit.
+                  </p>
+
                 </div>
               </div>
 
             </div>
 
             <div className="flex justify-between items-center border-t pt-6 mt-12">
-                <Button
-                  type="button"
-                  onClick={() => dispatch(handlePreviousStep())}
-                 className='text-gc-black border border-gc-black bg-transparent'
-                >
-                  <ChevronLeft className="w-5 h-5 mr-2" />
-                  Previous
-                </Button>
-                <Button
-                  type="submit"
-                  className="rounded-lg px-8 py-5 text-base font-semibold bg-blue-600 text-white hover:bg-blue-700"
-                >
-                  Pay ₹{totalAmount.toLocaleString('en-IN')}
-                </Button>
+              <Button
+                type="button"
+                onClick={() => dispatch(handlePreviousStep())}
+                className='text-gc-black border border-gc-black bg-transparent'
+              >
+                <ChevronLeft className="w-5 h-5 mr-2" />
+                Previous
+              </Button>
+              <Button
+                type="submit"
+                className="rounded-lg px-8 py-5 text-base font-semibold bg-blue-600 text-white hover:bg-blue-700"
+              >
+                Pay ₹{totalAmount.toLocaleString('en-IN')}
+              </Button>
             </div>
           </CardContent>
         </form>
