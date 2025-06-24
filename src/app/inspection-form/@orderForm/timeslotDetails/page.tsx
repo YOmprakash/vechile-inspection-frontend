@@ -1,3 +1,5 @@
+'use client'
+
 import React from 'react';
 import { format, addDays, startOfToday, parseISO } from 'date-fns';
 import { Button } from '@/components/ui/button';
