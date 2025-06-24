@@ -37,6 +37,7 @@ export const validateVehicleAndProceed = createAsyncThunk(
       dispatch(handleNextStep());
     }
     
+    
     return errors;
   }
 );

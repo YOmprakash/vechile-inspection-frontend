@@ -49,7 +49,7 @@ const Testimonials = () => {
                                     ))}
                                 </div>
                                 <blockquote className="text-lg text-gc-black italic mb-6 leading-relaxed border-l-4 border-cyan-400 pl-4">
-                                    "{testimonial.quote}"
+                                    &ldquo;{testimonial.quote}&rdquo;
                                 </blockquote>
                                 <div className="flex items-center gap-3">
                                     <Avatar>

@@ -40,7 +40,8 @@ const Hero = () => {
                                 </div>
                                 <div className="space-y-3">
                                     <div className="flex justify-between items-center p-3 bg-green-50 rounded-lg">
-                                        <span className="text-sm">Today's Inspections</span>
+                                       <span className="text-sm">Today&rsquo;s Inspections</span>
+
                                         <Badge variant="secondary" className="bg-green-100 text-green-800">8 completed</Badge>
                                     </div>
                                     <div className="flex justify-between items-center p-3 bg-blue-50 rounded-lg">

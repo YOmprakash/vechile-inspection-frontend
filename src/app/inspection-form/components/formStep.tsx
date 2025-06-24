@@ -2,10 +2,11 @@
 
 import { useSelector } from 'react-redux'
 import { currentStepSelector } from '../selector'
-import CustomerDetails from '../@orderForm/customerDetails/page'
+
 import VehicleDetails from '../@orderForm/vechileDetails/page'
-import PaymentDetails from '../@orderForm/paymentDetails/page'
+import CustomerDetails from '../@orderForm/customerDetails/page'
 import TimeslotDetails from '../@orderForm/timeslotDetails/page'
+import PaymentDetails from '../@orderForm/paymentDetails/page'
 
 const FormStep = () => {
 
