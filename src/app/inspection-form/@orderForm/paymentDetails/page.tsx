@@ -90,7 +90,7 @@ const PaymentDetails = () => {
 
   const selectedPaymentMethod = paymentMethods.find(p => p.value === paymentMethod);
 
-  const handleSubmit = (e: any) => {
+  const handleSubmit = ( e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsModalOpen(true);
   };
